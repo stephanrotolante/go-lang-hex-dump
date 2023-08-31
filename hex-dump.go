@@ -53,6 +53,14 @@ func main() {
 	var output bytes.Buffer
 
 	for {
+
+		buffer = []byte{
+			00, 00, 00, 00,
+			00, 00, 00, 00,
+			00, 00, 00, 00,
+			00, 00, 00, 00,
+		}
+
 		n, err := file.Read(buffer)
 		if err != nil && err.Error() != "EOF" {
 			fmt.Println("Error:", err)

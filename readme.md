@@ -1,4 +1,4 @@
-## Hex Dump a file
+## Hex Dump a filer
 
 Dumps Hex output to specific file
 
@@ -15,7 +15,7 @@ go build hex-dump.go
 
 #### OR
 
-Install executable in PATH
+Install executable in `PATH`
 
 ```
  go install hex-dump.go 
