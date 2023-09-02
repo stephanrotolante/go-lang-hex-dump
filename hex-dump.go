@@ -1,7 +1,6 @@
 package main
 
 import (
-	"bytes"
 	"errors"
 	"flag"
 	"fmt"
@@ -50,15 +49,13 @@ func main() {
 
 	buffer := make([]byte, 16)
 
-	var output bytes.Buffer
-
 	for {
 
 		buffer = []byte{
-			00, 00, 00, 00,
-			00, 00, 00, 00,
-			00, 00, 00, 00,
-			00, 00, 00, 00,
+			0x00, 0x00, 0x00, 0x00,
+			0x00, 0x00, 0x00, 0x00,
+			0x00, 0x00, 0x00, 0x00,
+			0x00, 0x00, 0x00, 0x00,
 		}
 
 		n, err := file.Read(buffer)
@@ -70,16 +67,14 @@ func main() {
 			break
 		}
 
-		output.WriteString(fmt.Sprintf("%08x: ", counter))
+		fmt.Printf("%08x: ", counter)
 
 		for _, b := range buffer {
-			output.WriteString(fmt.Sprintf("%02x ", b))
+			fmt.Printf("%02x ", b)
 		}
 		counter++
 
-		output.WriteString("\n")
+		fmt.Println("")
 	}
-
-	fmt.Print(string(output.Bytes()))
 
 }
