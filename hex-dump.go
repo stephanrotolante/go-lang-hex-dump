@@ -69,8 +69,8 @@ func main() {
 
 		fmt.Printf("%08x: ", counter)
 
-		for _, b := range buffer {
-			fmt.Printf("%02x ", b)
+		for i := 0; i < n; i++ {
+			fmt.Printf("%02x ", buffer[i])
 		}
 		counter++
 
